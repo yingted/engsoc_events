@@ -1,0 +1,31 @@
+{% extends "base_home.html" %}
+{% block content %}
+	<script src="/static/js/vendor/jHtmlArea-0.7.5.min.js"></script>
+	<link rel="stylesheet" href="/static/css/jHtmlArea.css">
+	{% if form %}
+		<blockquote>
+			<h1>modify event</h1>
+			for performance reasons, it takes time to update
+			<table>
+				{{ form.as_table }}
+			</table>
+		</blockquote>
+	{% endif %}
+	{% for event in events %}
+		<event>
+			{% include 'base_event.html' with event=event %}
+			<form method="post">
+				<input type='hidden' name='csrfmiddlewaretoken' value='{{ csrf_token }}{# stored #}' />
+				<input type="hidden" name="eid" value="{{ event.id }}">
+				<textarea name="extra_html">{{ event.extra_html }}</textarea>
+				<input type="submit">
+			</form>
+		</event>
+	{% endfor %}
+	<script>
+		$(function(){
+			$("textarea").htmlarea();
+		});
+	</script>
+{% endblock %}
+{# vim: set ts=4 sw=4: #}

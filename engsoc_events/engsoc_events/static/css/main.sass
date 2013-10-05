@@ -1,0 +1,384 @@
+$dropdown: #07f
+@mixin prefix($style, $val)
+	-webkit-#{$style}: $val
+	-moz-#{$style}: $val
+	-ms-#{$style}: $val
+	-o-#{$style}: $val
+	#{$style}: $val
+
+/* HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+html,button,input,select,textarea
+	color: #222
+body
+	font-size: 1em
+	line-height: 1.4
+\::-moz-selection,::selection
+	background: #b3d4fc
+	@include prefix(text-shadow, none)
+hr
+	display: block
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+	margin: 1em 0
+	padding: 0
+img
+	vertical-align: middle
+fieldset
+	border: 0
+	margin: 0
+	padding: 0
+textarea
+	resize: vertical
+.chromeframe
+	margin: 0.2em 0
+	background: #ccc
+	color: #000
+	padding: 0.2em 0
+/* Initializr Styles Author:Jonathan Verrecchia - verekia.com/initializr/responsive-template
+body
+	font: 16px / 26px Helvetica,Helvetica Neue,Arial
+.wrapper
+	width: 90%
+	margin: 0 5%
+/* ALL:Theme
+.header-container
+	border-bottom: 20px solid #000
+.main aside
+	border-top: 20px solid #000
+.header-container,.main aside
+	background: #f70
+.title
+	color: white
+a
+	&:link
+		color: #12c
+	&:active,&:focus
+		color: orange
+	&:visited
+		color: #b7f
+	&:hover
+		color: #70f
+	&.click
+		color: #059
+.click
+	cursor: pointer
+a:hover,.click:hover
+	background-color: #ffc
+	@include prefix(border-radius, 2px)
+a.nohover
+	background: transparent!important
+h1.title
+	/* chrome
+	float: left
+h1.title>a,header>nav a
+	color: #fff!important
+/* ALL:header
+body,html
+	height: 100%
+div
+	&.main-container
+		min-height: 100%
+		height: auto!important
+		height: 100%
+		margin: 0 auto -161px
+/* MOBILE:Menu
+nav
+	width: auto
+	ul
+		margin: 0
+		padding: 0
+	a
+		display: block
+		padding: 15px 0
+		text-align: center
+		text-decoration: none
+		font-weight: bold
+		color: white
+		&:hover,&:focus
+			background: #000
+		&:hover,&:visited
+			color: white
+		&:hover
+			text-decoration: underline
+.menu
+	margin-right: 0
+	>li
+		margin-right: .4em
+/* MOBILE:Main
+.main
+	padding: 30px 0
+	article h1
+		font-size: 2em
+	aside
+		color: white
+		padding: 0px 5% 10px
+		margin-bottom: 1em
+.fall
+	position: absolute
+	bottom: 0
+/* ALL:IE Fixes
+.ie7 .title
+	padding-top: 20px
+/* Author's custom styles
+ul.errorlist
+	float: right
+	margin: 0
+	border: 1px solid red
+	@include prefix(border-radius, .5em)
+	background-color: #fee
+section:target
+	border: 1px dashed #ccf
+	@include prefix(border-radius, 3px)
+@media only screen and (max-width: 964px)
+	.sponsor-panel
+		width: 336px
+@media only screen and (min-width: 965px)
+.required
+	color: red
+.input-hint
+	position: absolute
+	z-index: -1
+	color: silver
+.input-hinted
+	background-color: transparent
+	border-color: transparent
+.view-parent
+	border-right: 2px dashed #ccc
+	dt
+		font-style: italic
+.view-child dt
+	font-style: italic
+.view-parent dd
+	color: black
+.view-child
+	dd
+		color: black
+	border-top: 1px dotted black
+.fill-parent
+	display: block
+	height: 100%
+	width: 100%
+	text-decoration: none
+.menu
+	float: right
+	ul
+		position: absolute
+		display: block
+		top: 46px
+		z-index: 10
+		padding-right: 22px
+		background-color: $dropdown
+		visibility: hidden
+		@include prefix(box-shadow, 0 5px 10px #777)
+		>li
+			display: block
+			width: 100%
+			>a
+				width: 100%
+				padding-left: 1em
+				padding-right: 1em
+				margin-left: 0
+				white-space: normal
+	li
+		position: relative
+		float: left
+		margin-right: 1em
+	>li
+		&:hover>a,&.hover>a
+			background-color: $dropdown
+		&:hover>a:hover,&.hover>a.hover
+			background-color: #000
+		&:hover>ul,&.hover>ul
+			visibility: visible
+		>a
+			white-space: nowrap
+/* Media Queries
+@media only screen and (max-width: 479px)
+	textarea
+		max-width: 90%
+	h1
+		margin: 0
+	.header-container>header
+		a
+			float: left
+			padding: 10px 1%
+			font-size: .7em
+			@include prefix(border-radius, 0)
+			>img
+				max-height: 22px
+		margin: 0 5px
+		width: 100%
+	small
+		font-size: .6em
+	.ie8 .header-container>header
+		a
+			>img
+				max-height: none
+			line-height: 67px
+			font-size: 1em
+		>h1
+			margin: 0
+@media only screen and (min-width: 480px)
+	/* INTERMEDIATE:Menu
+	nav a
+		float: left
+		margin: 0 1.7%
+		padding: 11px 1%
+		font-size: .8em
+	.header-container>header a>img
+		max-height: 48px
+	.menu ul
+		top: 48px
+		padding-right: 22px
+	nav
+		li
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+	.header-container>header>h1
+		margin: 0
+	/* INTERMEDIATE:IE Fixes
+	h1.title,nav>ul>li
+		display: inline
+	.lt-ie9 nav a
+		margin: 0 0.7%
+	nav
+		float: right
+@media only screen and (min-width: 768px)
+	/* WIDE:CSS3 Effects
+	.header-container,.main aside
+		@include prefix(box-shadow, 0 5px 10px #aaa)
+	.main-container
+		@include prefix(box-shadow, 0 7px 5px 2px #aaa)
+	/* WIDE:Menu
+	.title
+		float: left
+	nav
+		a
+			padding: 25px 1em
+			font-size: 1em
+	/* WIDE:Main
+	.lt-ie9
+		nav a
+			width: 27%
+		&.lt-ie8 nav a
+			width: 21%
+	.main
+		article
+			float: left
+			width: 54%
+		aside
+			float: right
+			clear: right
+			width: 28%
+			min-width: 228px
+	.fall,.main
+		padding-left: 20px
+		padding-right: 20px
+	.header-container>header a>img
+		max-height: 76px
+	.menu
+		ul
+			top: 76px
+			padding-right: 2em
+		li
+			margin-right: 1em
+@media only screen and (min-width: 1140px)
+	/* Maximal Width
+	.wrapper
+		width: 1026px
+		/* 1140px - 10% for margins
+		margin: 0 auto
+	.menu li
+		margin-right: 2em
+/* Helper classes
+.ir
+	background-color: transparent
+	border: 0
+	overflow: hidden
+	*text-indent: -9999px
+	&:before
+		content: ""
+		display: block
+		width: 0
+		height: 100%
+.hidden
+	display: none !important
+	visibility: hidden
+.js .jshidden
+	display: none
+.visuallyhidden
+	border: 0
+	clip: rect(0 0 0 0)
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	width: 1px
+	&.focusable
+		&:active,&:focus
+			clip: auto
+			height: auto
+			margin: 0
+			overflow: visible
+			position: static
+			width: auto
+.invisible
+	visibility: hidden
+.clearfix
+	&:before
+		content: " "
+		display: table
+	&:after
+		content: " "
+		display: table
+		clear: both
+	*zoom: 1
+/* Print styles
+@media print
+	*
+		background: transparent !important
+		color: #000 !important
+		/* Black prints faster:h5bp.com/s
+		@include prefix(box-shadow, none !important)
+		@include prefix(text-shadow, none !important)
+	a
+		text-decoration: underline
+		&:visited
+			text-decoration: underline
+		&[href]:after
+			content: " (" attr(href) ")"
+	abbr[title]:after
+		content: " (" attr(title) ")"
+	/* Don't show links for images,or javascript/internal links
+	.ir a:after
+		content: ""
+	a
+		&[href^="javascript:"]:after,&.nohover:after,&[href^="#"]:after
+			content: ""
+	pre,blockquote
+		border: 1px solid #999
+		page-break-inside: avoid
+	thead
+		display: table-header-group
+		/* h5bp.com/t
+	tr
+		page-break-inside: avoid
+	img
+		page-break-inside: avoid
+		max-width: 100% !important
+	@page
+		margin: 0.5cm
+	p,h2,h3
+		orphans: 3
+		widows: 3
+	h2,h3
+		page-break-after: avoid
+	.header-container
+		display: none
+	.noprint
+		display: none!important
+/* vim:set ts=2 sw=2 st=2 noexpandtab:

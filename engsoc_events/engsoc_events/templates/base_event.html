@@ -1,0 +1,10 @@
+{% load humanize %}
+<h1>{{ event.title }}</h1>
+<p class="when">
+	{% for time in event.when %}
+		{{ time.start|naturaltime }} to {{ time.end|naturaltime }}<br>
+	{% endfor %}
+</p>
+<div class="location">{{ event.location }}</div>
+<div class="details">{{ event.details }}</div>
+{{ event.extra_html|safe }}

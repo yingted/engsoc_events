@@ -1,0 +1,36 @@
+{% extends "base_home.html" %}
+{% load extras %}
+{% block inhead %}
+	<style>
+		html,body{
+			/*overflow:hidden; scrollbar*/
+		}
+	</style>
+	{# <meta http-equiv="refresh" content="300"> #}
+{% endblock %}
+{% block content %}
+	<article>
+		<header>
+			<h1>Upcoming Events</h1>
+		</header>
+		<section>
+			{% load extras %}
+			{% event_list 42 %}
+		</section>
+	</article>
+{% endblock %}
+{% block postscript %}
+    <script>
+		$(function(){
+			var $events=$("event"),i=0,$html=$('html,body');
+			$html.scrollTop(0);
+			setTimeout(function next(){//show "upcoming events" for 1 s
+				var $event=$events.eq(i);
+				$html.animate({scrollTop:$event.offset().top},200);
+				i=(i+1)%$events.length;
+				setTimeout(next,$event.text().replace(/\s+/g," ").length*10+1000);//120 ms per letter
+			},1000);
+		});
+	</script>
+{% endblock %}
+{# vim: set ts=4 sw=4: #}

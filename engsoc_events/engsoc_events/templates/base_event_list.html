@@ -1,0 +1,8 @@
+{% load humanize %}
+{% for event in events %}
+	<event>
+		{% include 'base_event.html' with event=event %}
+		{# google calendar id: {{ event.id }} #}
+	</event>
+{% endfor %}
+{# vim: set ts=4 sw=4: #}
